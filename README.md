@@ -1,3 +1,8 @@
+Update - 21-06-23
+![image](https://github.com/ZeroSwordDev/Spotify-Clone-2.0/assets/113391622/33b25614-0d8a-4d2d-a5ea-e4b5d9a7f94d)
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
