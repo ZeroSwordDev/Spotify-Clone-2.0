@@ -3,7 +3,7 @@ import playlistCardImage from "../src/app/img/playlistCardImage.png";
 import Image from "next/image";
 const Card = () => {
   return (
-    <div className="w-[343px] h-[84px] flex rounded">
+    <div className="w-[343px] h-[84px] flex rounded-sm bg-gray-300 justify-start items-center ">
       <Image src={playlistCardImage} className="w-[84px] h-[84px]" />
       <div className="text-white text-[16px] font-bold">Pop Right Now</div>
     </div>
