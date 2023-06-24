@@ -1,14 +1,13 @@
+'use client'
+import { signIn } from "next-auth/react";
 import React from "react";
 const Login = () => {
   return (
-    <div className="flex h-screen w-screen">
-      <button
-        className="
-      text-white"
-      >
-        Login with spotify
-      </button>
-    </div>
+    <button
+      onClick={() => signIn('spotify',{ callbackUrl: '/'})}
+    >
+      Login with spotify
+    </button>
   );
 };
 

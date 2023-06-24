@@ -4,6 +4,7 @@ import image from "../src/app/img/logoSpotify.png";
 import { AiFillHome , AiFillHeart} from "react-icons/ai";
 import { BsFillPlusSquareFill } from "react-icons/bs";
 import { BiLibrary, BiSearchAlt } from "react-icons/bi";
+import { signOut } from "next-auth/react";
 
 function Sidebar() {
   return (
@@ -47,6 +48,10 @@ function Sidebar() {
           <div className="flex items-center p-2 space-x-2 h-10 w-36 text-gray-500 cursor-pointer">
                 <AiFillHeart size={30} className=" bg-gray"/>
                 <p className="text-sm">Liked Songs</p>
+          </div>
+
+          <div className="flex items-center p-2 space-x-2 h-10 w-36 text-gray-500 cursor-pointer">
+               <button onClick={()=> signOut({callbackUrl: '/login'})}>Logout</button>
           </div>
         </div>
       </div>
