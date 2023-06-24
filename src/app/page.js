@@ -3,6 +3,7 @@ import Sidebar from "../../components/Sidebar";
 import Image from "next/image";
 import Player from "../../components/Player";
 
+
 export default function Home() {
   return (
     <div className="h-screen w-screen">
