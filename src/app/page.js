@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="h-screen w-screen">
       <title> Spotify 2.0</title>
-      <main className="">
+      <main className="h-screen">
         <Sidebar />
         {/* center */}
 
