@@ -1,8 +1,15 @@
 import React from "react";
-import { AiFillPlayCircle } from "react-icons/ai";
+import Image from "next/image";
+import {
+  AiFillPlayCircle,
+  AiOutlineHeart,
+  AiOutlineUnorderedList,
+  AiTwotoneSound,
+} from "react-icons/ai";
 import { MdSkipNext } from "react-icons/md";
-import {  BsRepeat } from "react-icons/bs"
-import { BiShuffle } from "react-icons/bi";
+import { BsRepeat, BsFillPipFill } from "react-icons/bs";
+import { BiShuffle, BiDevices } from "react-icons/bi";
+import LogoArtista from "../src/app/img/logoArtista.jpeg";
 
 const Player = () => {
   return (
@@ -14,11 +21,32 @@ const Player = () => {
 
       <div className="flex p-2 justify-between h-80 w-screen">
         {/* Container */}
-        <div className="">{/* left */}</div>
+        <div className="flex items-center  justify-between w-[250px] h-16 gap-3 ">
+          {/* left */}
+          <div className="">
+            <Image src={LogoArtista} alt="" width={60} height={60} />
+          </div>
+          <div className="flex flex-col w-36">
+            <h3 className=" font-medium text-sm ">Hold On</h3>
+            <p className=" font-thin text-sm ">Justin Bieber</p>
+          </div>
+          <div className="flex gap-4">
+            <AiOutlineHeart
+              className="text-gray-500 hover:text-white"
+              cursor={"pointer"}
+              size={20}
+            />
+            <BsFillPipFill
+              className="text-gray-500 hover:text-white"
+              cursor={"pointer"}
+              size={20}
+            />
+          </div>
+        </div>
         <div className="flex flex-col items-center space-y-2  h-[100%] w-[700px]">
           {/* Center */}
           <div className="flex items-center gap-3">
-            <BiShuffle  cursor={"pointer"} size={15}/>
+            <BiShuffle cursor={"pointer"} size={15} />
             <MdSkipNext
               size={25}
               cursor={"pointer"}
@@ -26,15 +54,21 @@ const Player = () => {
             />
             <AiFillPlayCircle cursor={"pointer"} size={35} />
             <MdSkipNext cursor={"pointer"} size={25} />
-            <BsRepeat cursor={"pointer"} size={15}/>
+            <BsRepeat cursor={"pointer"} size={15} />
           </div>
-          <div className=" flex justify-between items-center  w-full h-5">
+          <div className=" flex justify-between items-center  w-full h-5   ">
             <span className="text-xs">00:00</span>
-            <input type="range" className=" w-[600px] h-5 " />
+            <input type="range" className=" w-[600px] h-1 " />
             <span className="text-xs">03:25</span>
           </div>
         </div>
-        <div className="">{/* right */}</div>
+        <div className="flex justify-end items-center w-[300px] gap-3 h-16 pr-2">
+          {/* right */}
+          <AiOutlineUnorderedList className="text-gray-500 hover:text-white" cursor={"pointer"} size={15}/>
+          <BiDevices className="text-gray-500 hover:text-white" cursor={"pointer"} size={15}/>
+          <AiTwotoneSound className="text-gray-500 hover:text-white" cursor={"pointer"} size={15}/>
+          <input type="range" className="w-16 h-1" />
+        </div>
       </div>
     </div>
   );
