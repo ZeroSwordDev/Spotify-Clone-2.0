@@ -1,11 +1,13 @@
 import React from "react";
-import Card from "./Card";
+import HorizontalCard from "./HorizontalCard";
+import VerticalCard from "./VerticalCard";
 
 const Main = () => {
   return (
-    <div className="w-full h-full flex flex-col box-border p-4 ">
+    <div className="w-full h-full flex flex-col box-border p-4 bg-gradient">
       <h1>Good afternoon</h1>
-      <Card />
+      <HorizontalCard />
+      <VerticalCard />
     </div>
   );
 };

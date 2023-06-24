@@ -4,7 +4,17 @@
 
 @import 'tailwindcss/tailwind.css';
 
+
+
 body{
     background-color: rgb(54, 53, 53);
     overflow: hidden;
+    font-family: Circular Std;
 }
+
+
+@layer utilities {
+    .bg-gradient {
+      background: linear-gradient(180deg, #3C3F41 0%, #000 100%);
+    }
+  }
