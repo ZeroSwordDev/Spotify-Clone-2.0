@@ -2,19 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-@import 'tailwindcss/tailwind.css';
+@import "tailwindcss/tailwind.css";
 
-
-
-body{
-    background-color: rgb(54, 53, 53);
-    overflow: hidden;
-    font-family: Circular Std;
+body {
+  background-color: rgb(54, 53, 53);
+  overflow: hidden;
+  font-family: Circular Std;
 }
 
-
 @layer utilities {
-    .bg-gradient {
-      background: linear-gradient(180deg, #3C3F41 0%, #000 100%);
-    }
+  .bg-gradient {
+    background: linear-gradient(180deg, #3c3f41 0%, #000 100%);
   }
+  .bg-headerPlaylist-gradient {
+    background: linear-gradient(180deg, #90aea7 0%, #000 100%);
+  }
+}
