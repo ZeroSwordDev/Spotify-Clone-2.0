@@ -1,11 +1,19 @@
-import React from 'react'
-import Image from 'next/image'
-import image from '../src/app/img/logoSpotify.png'
-import { AiFillHome, AiFillHeart } from 'react-icons/ai'
-import { BsFillPlusSquareFill } from 'react-icons/bs'
-import { BiLibrary, BiSearchAlt } from 'react-icons/bi'
 
-const Sidebar = () => {
+import React, { useContext } from "react";
+import Image from "next/image";
+import image from "../src/app/img/logoSpotify.png";
+import { AiFillHome , AiFillHeart} from "react-icons/ai";
+import { BsFillPlusSquareFill } from "react-icons/bs";
+import { BiLibrary, BiSearchAlt } from "react-icons/bi";
+import { signOut } from "next-auth/react";
+import { AuthContext } from "../context/AuthContext";
+import PlayListCard from "./PlayListCard";
+
+function Sidebar() {
+
+  const {playlistUserRecent} = useContext(AuthContext);
+
+
   return (
     <div className=' flex flex-col justify-between items-center  w-[210px] h-screen p-3 bg-black'>
       {/* Menu And Logo */}
@@ -47,21 +55,23 @@ const Sidebar = () => {
         <hr />
 
         {/* PlayList */}
-        <div className=' flex flex-col w-40 h-[400px] p-2 gap-2'>
-          <p className='text-gray-400 text-xs font-mono mb-4'>PLAYLIST</p>
+        <div className=" flex flex-col w-40 h-[400px] p-2 space-y-5 ">
+          <p className="text-gray-400 text-xs font-mono mb-4">PLAYLIST</p>
 
-          <div className='flex items-center p-2 space-x-2 h-10 w-36 text-gray-500 cursor-pointer'>
-            <BsFillPlusSquareFill size={30} />
-            <p className='text-sm'>Create list</p>
+         {/*  <div className="flex items-center p-2 space-x-2 h-10 w-36 text-gray-500 cursor-pointer">
+                <BsFillPlusSquareFill size={30}/>
+                <p className="text-sm">Create list</p>
+          </div> */}
+  {
+    playlistUserRecent?.map(item => (
+      <PlayListCard key={item.id} Playlist ={item}/>
+    ))
+  }
+          
+          <div className="flex items-center p-2 space-x-2 h-10 w-36 text-gray-500 cursor-pointer">
+               <button onClick={()=> signOut({callbackUrl: '/login'})}>Logout</button>
           </div>
 
-          <div className='flex items-center p-2 space-x-2 h-10 w-36 text-gray-500 cursor-pointer'>
-            <AiFillHeart
-              size={30}
-              className=' bg-gray'
-            />
-            <p className='text-sm'>Liked Songs</p>
-          </div>
         </div>
       </div>
       {/* PLay  */}
