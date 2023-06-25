@@ -4,7 +4,6 @@ import Sidebar from "../../components/Sidebar.jsx";
 import Player from "../../components/Player.jsx";
 import { useSession } from "next-auth/react";
 import Main from "../../components/Main.jsx";
-import Playlist from "../../components/Playlist.jsx";
 
 export default function Home() {
   const { data: session , status} = useSession();
