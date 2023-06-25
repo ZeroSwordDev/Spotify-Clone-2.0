@@ -1,19 +1,22 @@
-import Head from "next/head";
+"use client";
+
 import Sidebar from "../../components/Sidebar.jsx";
-import Image from "next/image";
 import Player from "../../components/Player.jsx";
+import { useSession } from "next-auth/react";
 import Main from "../../components/Main.jsx";
-import Playlist from "../../components/Playlist.jsx";
 
 export default function Home() {
+  const { data: session , status} = useSession();
   return (
     <div className="h-screen w-screen">
       <title> Spotify 2.0</title>
-      <main className="h-full flex">
+      <main className=" flex h-screen">
+        {/* center */}
+       
         <Sidebar />
-        {/* <Main /> */}
+        <Main/>
 
-        <Playlist />
+       
         <Player />
       </main>
     </div>
