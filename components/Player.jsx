@@ -15,7 +15,7 @@ const Player = () => {
   return (
     <div
       style={{ height: 80, width: "100%" }}
-      className="  text-white bg-black fixed bottom-0"
+      className="  text-white bg-[#181818] fixed bottom-0 p-1"
     >
       {/* Player */}
 
