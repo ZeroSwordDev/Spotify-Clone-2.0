@@ -7,7 +7,7 @@ import Playlist from "../../components/Playlist.jsx";
 
 export default function Home() {
   return (
-    <div className="h-screen w-screen">
+    <div className="h-full w-screen">
       <title> Spotify 2.0</title>
       <main className="h-full flex">
         <Sidebar />

@@ -7,7 +7,7 @@ import { BiLibrary, BiSearchAlt } from "react-icons/bi";
 
 function Sidebar() {
   return (
-    <div className=" flex flex-col justify-between items-center  w-[210px] h-full p-3 bg-black">
+    <div className=" flex flex-col justify-between items-center  w-[210px] h-screen p-3 bg-black">
 
       {/* Menu And Logo */}
       <div className=" flex flex-col gap-2 items-center  p-3 ">
