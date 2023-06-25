@@ -1,5 +1,6 @@
-Update - 21-06-23
-![image](https://github.com/ZeroSwordDev/Spotify-Clone-2.0/assets/113391622/33b25614-0d8a-4d2d-a5ea-e4b5d9a7f94d)
+Update - 24-06-23
+![image](https://github.com/ZeroSwordDev/Spotify-Clone-2.0/assets/113391622/a1c7e4b5-c4a7-4dcd-9241-e1552a621ad2)
+
 
 
 
