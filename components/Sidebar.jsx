@@ -7,6 +7,7 @@ import { BsFillPlusSquareFill } from "react-icons/bs";
 import { BiLibrary, BiSearchAlt } from "react-icons/bi";
 import { AuthContext } from "../context/AuthContext";
 import PlayListCard from "./PlayListCard";
+import { signOut } from "next-auth/react";
 
 function Sidebar() {
 
