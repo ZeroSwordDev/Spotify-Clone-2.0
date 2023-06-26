@@ -1,3 +1,5 @@
+'use client'
+
 import AuthProvider from "../../components/AuthProvider";
 import AuthContextProvider from "../../context/AuthContext";
 import ReleaseContextProvider from "../../context/NewReleases";
