@@ -9,10 +9,10 @@ import { AuthContext } from "../context/AuthContext";
 import PlayListCard from "./PlayListCard";
 import { signOut } from "next-auth/react";
 
+
 function Sidebar() {
 
   const {playlistUserRecent} = useContext(AuthContext);
-
 
   return (
     <div className=" flex flex-col justify-between items-center  w-[210px] h-full p-3 bg-black">
@@ -60,6 +60,7 @@ function Sidebar() {
           <div className="flex items-center p-2 space-x-2 h-10 w-36 text-gray-500 cursor-pointer">
                <button onClick={()=> signOut({callbackUrl: '/login'})}>Logout</button>
           </div>
+       
         </div>
       </div>
       {/* PLay  */}
