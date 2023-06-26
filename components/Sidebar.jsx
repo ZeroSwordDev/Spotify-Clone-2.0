@@ -8,11 +8,13 @@ import { BiLibrary, BiSearchAlt } from "react-icons/bi";
 import { AuthContext } from "../context/AuthContext";
 import PlayListCard from "./PlayListCard";
 import { signOut } from "next-auth/react";
+import { useSelector } from "react-redux";
 
 
 function Sidebar() {
 
   const {playlistUserRecent} = useContext(AuthContext);
+
 
   return (
     <div className=" flex flex-col justify-between items-center  w-[210px] h-full p-3 bg-black">

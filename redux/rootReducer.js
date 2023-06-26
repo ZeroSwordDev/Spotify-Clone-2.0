@@ -1,4 +1,4 @@
-import  counterSlice  from "./counterSlice";
+import  PlayListDetailsSlice  from "./PlayListDetailsSlice";
 
 
 const { combineReducers } = require("redux");
@@ -7,6 +7,6 @@ const { combineReducers } = require("redux");
 
 
 export const rootReducer = combineReducers({
-    counter: counterSlice ,
+    playlistDetails: PlayListDetailsSlice ,
   });
   
