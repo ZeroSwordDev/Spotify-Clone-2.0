@@ -5,11 +5,16 @@ import image from "../src/app/img/logoSpotify.png";
 import { AiFillHome , AiFillHeart} from "react-icons/ai";
 import { BsFillPlusSquareFill } from "react-icons/bs";
 import { BiLibrary, BiSearchAlt } from "react-icons/bi";
+import { AuthContext } from "../context/AuthContext";
+import PlayListCard from "./PlayListCard";
+import { signOut } from "next-auth/react";
+import { useSelector } from "react-redux";
 
 
 function Sidebar() {
 
   const {playlistUserRecent} = useContext(AuthContext);
+
 
   return (
     <div className=' flex flex-col justify-between items-center  w-[210px] h-screen p-3 bg-black'>
