@@ -1,9 +1,10 @@
+'use client'
+
 import AuthProvider from "../../components/AuthProvider";
 import AuthContextProvider from "../../context/AuthContext";
 import ReleaseContextProvider from "../../context/NewReleases";
 import "./globals.css";
 import { Inter } from "next/font/google";
-import AuthProvider from "../../components/AuthProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
