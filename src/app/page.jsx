@@ -1,15 +1,14 @@
-import Head from "next/head";
-import Sidebar from "../../components/Sidebar.jsx";
-import Image from "next/image";
-import Player from "../../components/Player.jsx";
-import Main from "../../components/Main.jsx";
-import Playlist from "../../components/Playlist.jsx";
+import React from 'react'
+import Sidebar from '../../components/Sidebar.jsx'
+import Player from '../../components/Player.jsx'
+import Playlist from '../../components/Playlist.jsx'
+import Main from '../../components/Main.jsx'
 
-export default function Home() {
+export default function Home () {
   return (
-    <div className="h-screen w-screen">
+    <div className='h-full w-screen'>
       <title> Spotify 2.0</title>
-      <main className="h-full flex">
+      <main className='h-full flex'>
         <Sidebar />
         {/* <Main /> */}
 
@@ -17,5 +16,5 @@ export default function Home() {
         <Player />
       </main>
     </div>
-  );
+  )
 }
