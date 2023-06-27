@@ -7,10 +7,14 @@ import { BiLibrary, BiSearchAlt } from "react-icons/bi";
 import Link from "next/link";
 import { AuthContext } from "../context/AuthContext";
 import PlayListCard from "./PlayListCard";
+import { signOut } from "next-auth/react";
+import { useSelector } from "react-redux";
+
 
 function Sidebar() {
 
-const {  playlistUserRecent} = useContext(AuthContext)
+  const {playlistUserRecent} = useContext(AuthContext);
+
 
   return (
     <div className=" flex flex-col justify-between items-center  w-[210px] h-screen p-3 bg-black">
@@ -46,7 +50,7 @@ const {  playlistUserRecent} = useContext(AuthContext)
         <div className=" flex flex-col w-40 h-[400px] p-2 space-y-5 ">
           <p className="text-gray-400 text-xs font-mono mb-4">PLAYLIST</p>
 
-         {/*  <div className="flex items-center p-2 space-x-2 h-10 w-36 text-gray-500 cursor-pointer">
+          {/*  <div className="flex items-center p-2 space-x-2 h-10 w-36 text-gray-500 cursor-pointer">
                 <BsFillPlusSquareFill size={30}/>
                 <p className="text-sm">Create list</p>
           </div>
@@ -55,13 +59,15 @@ const {  playlistUserRecent} = useContext(AuthContext)
                 <AiFillHeart size={30} className=" bg-gray"/>
                 <p className="text-sm">Liked Songs</p>
           </div> */}
-
-{
+  {
     playlistUserRecent?.map(item => (
       <PlayListCard key={item.id} Playlist ={item}/>
     ))
   }
-       
+          
+          <div className="flex items-center p-2 space-x-2 h-10 w-36 text-gray-500 cursor-pointer">
+               <button onClick={()=> signOut({callbackUrl: '/login'})}>Logout</button>
+          </div>
         </div>
       </div>
       {/* PLay  */}

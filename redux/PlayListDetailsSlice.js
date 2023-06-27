@@ -3,6 +3,7 @@ import axios from "axios";
 
 const initialState = {
   playlistDetails: {},
+  playlist: {},
   loading: false,
   error: null,
 };
@@ -24,6 +25,19 @@ export const PlayListDetailsSlice = createSlice({
       state.loading = false;
       state.error = action.payload;
     },
+    detailPLaylistStart: (state, action) => {
+      state.loading = true;
+      state.error = null;
+    },
+    detailPLaylistSuccess: (state, action) => {
+      state.playlist = action.payload;
+      state.loading = false;
+      state.error = null;
+    },
+    detailPLaylistFailure: (state, action) => {
+      state.loading = true;
+      state.error = null;
+    }
   },
 });
 
@@ -32,6 +46,9 @@ export const {
   fetchPlaylistDetailsStart,
   fetchPlaylistDetailsSuccess,
   fetchPlaylistDetailsFailure,
+  detailPLaylistStart,
+  detailPLaylistSuccess,
+  detailPLaylistFailure
 } = PlayListDetailsSlice.actions;
 
 export default PlayListDetailsSlice.reducer;
@@ -53,5 +70,25 @@ export const fetchPlaylistDetails = (id, accessToken) => async (dispatch) => {
     dispatch(fetchPlaylistDetailsSuccess(response.data.items));
   } catch (error) {
     dispatch(fetchPlaylistDetailsFailure(error.message));
+  }
+};
+
+
+export const detailPLaylist = (id, accessToken) => async (dispatch) => {
+  dispatch(detailPLaylistStart());
+  try {
+    const response = await axios.get(
+      `https://api.spotify.com/v1/playlists/${id}`,
+      {
+        headers: {
+          Authorization: "Bearer " + accessToken,
+        },
+      }
+    );
+
+   
+    dispatch(detailPLaylistSuccess(response.data));
+  } catch (error) {
+    dispatch(detailPLaylistFailure(error.message));
   }
 };
