@@ -18,8 +18,8 @@ const Main = () => {
       </div>
       <h1 className="text-[#FFFFFF] font-bold text-2xl">Recent Played</h1>
       <div className="flex gap-x-5">
-        {recentTracks?.map((item) => (
-          <VerticalCardRecent key={item.id} recently={item} />
+        {recentTracks?.map((item, i) => (
+          <VerticalCardRecent key={i} recently={item} />
         ))}
       </div>
       <h1 className="text-[#FFFFFF] font-bold text-2xl">Just the Hits</h1>
