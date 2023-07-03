@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import Image from 'next/image'
 import React from 'react'
 import more from '../src/app/img/more.png'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { playSong } from '../redux/PlayerSlice'
 import { useSession } from 'next-auth/react'
 const SongCard = ({ TrackPlaylist }) => {

@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
 import Image from "next/image";
-import test from "../../img/playlistHeaderImage.png";
 import button from "../../img/button.png";
 import heart from "../../img/heart.png";
 import dots from "../../img/dots.png";

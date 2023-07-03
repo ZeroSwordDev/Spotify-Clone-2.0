@@ -1,14 +1,12 @@
 'use client'
 import {
-  ChevronDownIcon,
   MagnifyingGlassIcon,
 } from '@heroicons/react/24/outline'
-import React, { useState } from 'react'
+import React from 'react'
 import ArtistImage from '../img/ArtistImage.png'
 import playlistCardImage from '../img/playlistCardImage.png'
 import Image from 'next/image'
 const Search = () => {
-  const [searchKey, setSearchKey] = useState('')
 
   return (
     <div className='flex flex-col gap-2 h-screen w-full bg-gradient box-border p-4 gap-y-5'>
