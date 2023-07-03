@@ -18,7 +18,8 @@ const query = new URLSearchParams(params).toString();
 const LOGIN_URL = "https://accounts.spotify.com/authorize?" + query;
 
 async function refreshAccesToken(token) {
-  //rfrescar token
+  //  refrescar token 
+
   const params = new URLSearchParams()
   params.append("grant_type", "refresh_token");
   params.append("refresh_token", token.refreshToken)
@@ -27,7 +28,7 @@ async function refreshAccesToken(token) {
     headers: {
       Authorization:
         "Basic " +
-        new Buffer.from(process.env.SPOTIFY_CLIENTID + ":" + process.env.SPOTIFY_SECRET).toString("base64"),
+        new Buffer.From(process.env.SPOTIFY_CLIENTID + ":" + process.env.SPOTIFY_SECRET).toString("base64"),
     },
     body: params
   });

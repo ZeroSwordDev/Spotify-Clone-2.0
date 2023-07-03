@@ -23,14 +23,14 @@ const page = () => {
 
 const image = playlist?.images?.map(item => item?.url)[0]
   useEffect(() => {
-    dispatch(detailPLaylist(navigation.id, session.accessToken));
+    dispatch(detailPLaylist(navigation.id, session?.accessToken));
   }, [navigation.id]);
 
   return (
     <div className="w-full h-screen text-[#FFFFFF] bg-headerPlaylist-gradient box-border p-5 ">
       {loading ? (
         <div className="flex items-center  justify-center h-screen w-full  pr-40 pb-10">
-          <span class="loader"></span>
+          <span className="loader"></span>
         </div>
       ) : (
         <>
@@ -68,7 +68,7 @@ const image = playlist?.images?.map(item => item?.url)[0]
             </div>
           </nav>
 
-          <main className="overflow-y-scroll h-[380px] w-full mb-[80px]">
+          <main className="overflow-y-scroll h-[420px] w-full mb-[80px]">
             <div className="flex w-full  flex-col gap-5">
               <div className="w-full  h-5 box-border px-10 py-2 flex justify-between">
                 <span className="w-64">TITLE</span>
@@ -78,7 +78,7 @@ const image = playlist?.images?.map(item => item?.url)[0]
               </div>
               {tracksList &&
                 Object.values(tracksList)?.map((item) => (
-                  <SongCard key={item.track.id} TrakcPlayList={item} />
+                  <SongCard key={item.track.id} TrackPlaylist={item} />
                 ))}
             </div>
           </main>
